@@ -15,7 +15,7 @@ class Plan(models.Model):
     link = models.URLField(verbose_name="link", unique=True, editable=False, null=True)
     commission = models.DecimalField(decimal_places=2, max_digits=10, editable=False, default=0.00)
     referals = models.ManyToManyField("Account", related_name="invites")
-    is_paid = models.BooleanField(verbose_name="account validity", default=True, blank=True)
+    is_paid = models.BooleanField(verbose_name="account validity", default=True, blank=True) 
 
     def __str__(self):
         return self.package
@@ -42,7 +42,4 @@ class Blog(models.Model):
 
     def __str__(self):
         return self.title
-    
-    def save(self):
-        self.slug 
-        super().save()
+
