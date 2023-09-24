@@ -1,4 +1,5 @@
 # orm
-This repo has the code snippets for my medium articles. 
-It will be used for my medium article series for ORM operations
-you are allowed to make your contributions
+
+This respo has code snippets for my medium articles on django templates with htmx.
+I am building a blog application demonstrating various applications of django templates and 
+htmx. 

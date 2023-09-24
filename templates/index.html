@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="container">
+    <form action="{% url 'home' %}" method="post">
+        {% csrf_token %}
+        <div>
+            <label for="username">{{form.username.label}}</label>
+            {{form.username}}
+            <p class="errors" id="usernameError" style="color: brown;"></p>
+        </div>
+        <div>
+            <label for="email">{{form.email.label}}</label>
+            {{form.email}}
+            <p class="errors" id="emailError" style="color: brown;"></p>
+        </div>
+        <div>
+            <label for="password1">{{form.password1.label}}</label>
+            {{form.password1}}
+        </div>
+        <div>
+            <label for="password1">{{form.password2.label}}</label>
+            {{form.password2}}
+        </div>
+        <button class="btn-primary mt-4">submit</button>
+    </form>
+</div>
+{% endblock main %}
