@@ -18,12 +18,18 @@ class RegistrationForm(UserCreationForm):
                             "placeholder": "your username",
                             'hx-post': reverse_lazy("username-validation"),
                             'hx-target': '#usernameError',
+                            'hx-swap': 'outerHTML',
+                            'hx-select': '#usernameError',
+                            'hx-select-oob': '#submitBtn',
                             'hx-trigger': 'keyup[target.value.length > 3]',
                           }),
             "email": forms.TextInput(attrs={"class": "form-control", 
                             "placeholder": "your email",
                             'hx-post': reverse_lazy('email-validation'),
                             'hx-target': '#emailError',
+                            'hx-swap': 'outerHTML',
+                            'hx-select': '#emailError',
+                            'hx-select-oob': '#submitBtn',
                             'hx-trigger': 'keyup[target.value.length > 3]'
                             }),
         }

@@ -1,7 +1,12 @@
 {% extends "base.html" %}
 {% block main %}
+<style>
+    .errors{
+        color: red;
+    }
+</style>
 <div class="container">
-    <form action="{% url 'home' %}" method="post">
+    <form action="{% url 'home' %}" method="post" autocomplete="off">
         {% csrf_token %}
         <div>
             <label for="username">{{form.username.label}}</label>
@@ -21,7 +26,7 @@
             <label for="password1">{{form.password2.label}}</label>
             {{form.password2}}
         </div>
-        <button class="btn-primary mt-4">submit</button>
+        <button class="btn-primary mt-4" id="submitBtn" >submit</button>
     </form>
 </div>
 {% endblock main %}
